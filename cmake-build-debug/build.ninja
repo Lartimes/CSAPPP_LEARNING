@@ -55,6 +55,12 @@ build CMakeFiles/CSAPP.dir/code/01intro/main.c.obj: C_COMPILER__CSAPP_unscanned_
   OBJECT_DIR = CMakeFiles\CSAPP.dir
   OBJECT_FILE_DIR = CMakeFiles\CSAPP.dir\code\01intro
 
+build CMakeFiles/CSAPP.dir/code/01intro/Test01.c.obj: C_COMPILER__CSAPP_unscanned_Debug F$:/Dev/CProjects/CSAPP/code/01intro/Test01.c || cmake_object_order_depends_target_CSAPP
+  DEP_FILE = CMakeFiles\CSAPP.dir\code\01intro\Test01.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CSAPP.dir
+  OBJECT_FILE_DIR = CMakeFiles\CSAPP.dir\code\01intro
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CSAPP
@@ -63,7 +69,7 @@ build CMakeFiles/CSAPP.dir/code/01intro/main.c.obj: C_COMPILER__CSAPP_unscanned_
 #############################################
 # Link the executable CSAPP.exe
 
-build CSAPP.exe: C_EXECUTABLE_LINKER__CSAPP_Debug CMakeFiles/CSAPP.dir/code/01intro/main.c.obj
+build CSAPP.exe: C_EXECUTABLE_LINKER__CSAPP_Debug CMakeFiles/CSAPP.dir/code/01intro/main.c.obj CMakeFiles/CSAPP.dir/code/01intro/Test01.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CSAPP.dir

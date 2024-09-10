@@ -134,7 +134,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 
 
-![c compliation](./img/c%20compliation.png)
+![image-20240910163218537](C:\Users\33769\AppData\Roaming\Typora\typora-user-images\image-20240910163218537.png)
 
 ​		    gcc -o hello hello.c
 
@@ -142,11 +142,11 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 ​	**preprocessor, compiler, assembler, and linker**
 
-- ​	Preprocessing phase.  The preprocessor (cpp) modifies the original C program according to directives that begin with the ‘#’ character. For example, the #include  command in line 1 of hello.c tells the preprocessor to read the contents of the system header file stdio.h and insert it directly into the program text. The result is another C program, typically with the .i suffix.
+- ​	**Preprocessing phase.**  The preprocessor (cpp) modifies the original C program according to directives that begin with the ‘#’ character. For example, the #include  command in line 1 of hello.c tells the preprocessor to read the contents of the system header file stdio.h and insert it directly into the program text. The result is another C program, typically with the .i suffix.
 
   ​	预处理，处理# 链接文件，后缀为.i
 
-- Compilation phase.  The compiler (cc1) translates the text file hello.i into the text file hello.s, which contains an assembly-language program
+- **Compilation phase.**  The compiler (cc1) translates the text file hello.i into the text file hello.s, which contains an assembly-language program
 
   ​			
 
@@ -160,9 +160,52 @@ The representation of hello.c illustrates a fundamental idea: All information in
       ret
   ```
 
-  
+  Each of lines 2–7 in this definition describes one low-level machinelanguage instruction in a textual form. Assembly language is useful because it provides a common output language for different compilers for different high-level languages. For example, C compilers and Fortran compilers both generate output files in the same assembly language.
 
-- 
+-  **Assembly phase.**.the assembler (as) translates hello.s into machinelanguage instructions, packages them in a form known as a relocatable object program, and stores the result in the object file hello.o. This file is a binary file containing 17 bytes to encode the instructions for function main. If we were to view hello.o with a text editor, it would appear to be gibberish.
+
+- **. Linking phase **Notice that our hello program calls the printf function, which is part of the standard C library provided by every C compiler. The printf function resides in a separate precompiled object file called printf.o, which must somehow be merged with our hello.o program. The linker (ld) handles this merging. The result is the hello file, which is an executable object file (or simply executable) that is ready to be loaded into memory and executed by the system.
+     #不同的库，分离出来，linker(ld) 负责合并这些.o文件，最终link为 exe文件
 
 
+
+​		hello world  汇编
+
+```assembly
+; nasm -f elf -o write.o write.S
+ ; ld -m elf_i386 -s -o write.bin write.o
+;
+section .data
+    hello db 'Hello, World!' , 0x0A ; 定义字符串 "Hello, World!" 并在末尾添加换行符
+
+section .text
+    global _main
+
+_main:
+    ; 写消息到 stdout
+    mov eax, 4          ; 'write' 系统调用的编号是 4
+    mov ebx, 1          ; 文件描述符 1 表示 stdout
+    mov ecx, hello      ; 将字符串的地址放入 ecx
+    mov edx, 13         ; 字符串的长度是 13
+    int 0x80            ; 触发系统调用
+
+    ; 退出程序
+    mov eax, 1          ; 'exit' 系统调用的编号是 1
+    xor ebx, ebx        ; 退出码 0
+    int 0x80            ; 触发系统调用
+
+
+```
+
+
+
+## 1.3 It Pays to Understand How Compilation Systems Work
+
+there are some important reasons why programmers need to understand how compilation systems work:
+
+- ​	**Optimizing program performance.**  Modern compilers are sophisticated tools that usually produce good code. As programmers, we do not need to know the inner workings of the compiler in order to write efficient code. However, in order to make good coding decisions in our C programs, we do need a basic understanding of machine-level code and how the compiler translates different C statements into machine code.
+- **Understanding link-time errors.** In our experience, some of the most perplexing programming errors are related to the operation of the linker, especially when you are trying to build large software systems. 
+- **Avoiding security holes.**  For many years, buffer overflow vulnerabilities have accounted for many of the security holes in network and Internet servers. These vulnerabilities exist because too few programmers understand the need to carefully restrict the quantity and forms of data they accept from untrusted sources. A first step in learning secure programming is to understand the consequences of the way data and control information are stored on the program stack.
+
+## 1.4 Processors Read and Interpret Instructions Stored in Memory
 
