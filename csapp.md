@@ -134,7 +134,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 
 
-![image-20240910163218537](https://github.com/Lartimes/CSAPPP_LEARNING/blob/main/img/c%20compliation.png)
+![c_compliation](./img/c%20compliation.png)
 
 ​		    gcc -o hello hello.c
 
