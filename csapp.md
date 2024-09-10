@@ -136,6 +136,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 ![c_compliation](./img/c_compliation.png)
 
+
 ​		    gcc -o hello hello.c
 
 ​		从源文件编译为exe文件历经四个阶段：
