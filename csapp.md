@@ -134,7 +134,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 
 
-![image-20240910163218537](C:\Users\33769\AppData\Roaming\Typora\typora-user-images\image-20240910163218537.png)
+![image-20240910163218537](./img/c%20compliation.png)
 
 ​		    gcc -o hello hello.c
 
