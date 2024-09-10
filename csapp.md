@@ -134,7 +134,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 
 
-![c_compliation](./img/c%20compliation.png)
+![c_compliation](./img/c_compliation.png)
 
 ​		    gcc -o hello hello.c
 
