@@ -13,7 +13,7 @@ Whenever you learn something new, you can try it out right away and see the resu
 	is followed in the text by one or more practice problems that you should work immediately to test your 		understanding. Solutions to the practice problems are at the end of each chapter. As you read, try to solve each problem on your own and then check the solution to make sure you are on the right track
 ```
 
-![image-20240905104456142](C:\Users\33769\AppData\Roaming\Typora\typora-user-images\image-20240905104456142.png)
+![image-20240905104456142](.\img\image-20240905104456142.png)
 
 # Book Overview
 
