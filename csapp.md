@@ -339,3 +339,50 @@ A file is a sequence of bytes, nothing more and nothing less. Every I/O device, 
 
 ## 1.8 Systems Communicate with Other Systems Using Networks
 
+​	**In practice, modern systems are often linked to other systems by networks**
+
+​		With the advent of global networks such as the Internet, copying information from one machine to another has become one of the most important uses of computer systems. For example, applications such as email, instant messaging, the World Wide Web, FTP, and telnet are all based on the ability to copy information over a network
+
+![network IO](./img/networkIOService.png)
+
+
+
+## 1.9 Important Themes
+
+
+
+
+
+### 	1.9.1 Amdahl’s Law
+
+​	The main idea is that when we speed up one part of a system, the effect on the overall system performance depends on both how significant this part was and how much it sped up
+
+​	主要思想是，当我们加速系统的某一部分时，对整体系统性能的影响取决于这部分的重要性和加速的程度
+
+​			Consider a system in which executing some application requires time Told. Suppose some part of the system requires a fraction α of this time, and that we improve its performance by a factor of k. That is, the component originally required time αTold, and it now requires time (αTold)/k. The overall execution time would thus be 
+
+```
+Tnew = (1 − α)Told + (αTold)/k
+= Told[(1 − α) + α/k]
+From this, we can compute the speedup S = Told/Tnew as
+S = 1
+(1 − α) + α/k
+```
+
+
+
+### 1.9.2 Concurrency and Parallelism
+
+
+
+
+
+### 1.9.3 The Importance of Abstractions in Computer Systems
+
+
+
+
+
+
+
+## 1.10 Summary
