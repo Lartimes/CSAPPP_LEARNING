@@ -4,9 +4,6 @@
 #include "stdio.h"
   int a = 2;
 
-void main(void){
-    printf("aa");
-}
 
 
 

@@ -134,7 +134,7 @@ The representation of hello.c illustrates a fundamental idea: All information in
 
 
 
-![c_compliation](./img/c_compliation.png)
+![c_compliation](img/01intro/c_compliation.png)
 
 
 ​		    gcc -o hello hello.c
@@ -210,7 +210,7 @@ there are some important reasons why programmers need to understand how compilat
 
 ## 1.4 Processors Read and Interpret Instructions Stored in Memory
 
-![hardware organization](./img/hardware_org.png)
+![hardware organization](img/01intro/hardware_org.png)
 
 
 
@@ -245,7 +245,7 @@ there are some important reasons why programmers need to understand how compilat
 
 
 
-![exec](./img/hello_exec.png)
+![exec](img/01intro/hello_exec.png)
 
 读取数据到主存（DISK-->MEMORY _DMA），机器根据main routine 执行指令。
 
@@ -271,11 +271,11 @@ Similarly, a typical register file stores only a few hundred bytes of informatio
 
 
 
-![cache](./img/cache_memories.png)
+![cache](img/01intro/cache_memories.png)
 
 ## 1.6 Storage Devices Form a Hierarch
 
-![access_speed](./img/access_speed.png)
+![access_speed](img/01intro/access_speed.png)
 
 ​	**registers --> SRAM(L1 、L2、L3 cache) --> Main memory  --> local disks --> distributed file systems ,web servers**
 
@@ -285,7 +285,7 @@ The main idea of a memory hierarchy is that storage at one level serves as a cac
 
 
 
-![os](./img/os.png)
+![os](img/01intro/os.png)
 
 We can think of the operating system as a layer of software interposed between the application program and the hardware, as shown in Figure 1.10. All attempts by an application program to manipulate the hardware must go through the operating system
 
@@ -313,7 +313,7 @@ The operating system keeps track of all the state information that the process n
 
 ### 1.7.3 Virtual Memory
 
-![virtual addr](./img/process_virtual_add_space.png)
+![virtual addr](img/01intro/process_virtual_add_space.png)
 
 ​	**intro :** Virtual memory is an abstraction that provides each process with the illusion that it has exclusive use of the main memory. Each process has the same uniform view of memory, which is known as its virtual address space. 
 
@@ -343,7 +343,7 @@ A file is a sequence of bytes, nothing more and nothing less. Every I/O device, 
 
 ​		With the advent of global networks such as the Internet, copying information from one machine to another has become one of the most important uses of computer systems. For example, applications such as email, instant messaging, the World Wide Web, FTP, and telnet are all based on the ability to copy information over a network
 
-![network IO](./img/networkIOService.png)
+![network IO](img/01intro/networkIOService.png)
 
 
 
@@ -369,20 +369,97 @@ S = 1
 (1 − α) + α/k
 ```
 
-
+​	
 
 ### 1.9.2 Concurrency and Parallelism
 
+- concurrency :  refer to the general concept of a systemwith multiple, simultaneous activities,, 
 
+- parallelism: to refer to the use of concurrency to make a system run faster.
 
+  1. ​		**Thread-level Concurrency**
 
+     ​		**muliti-core processors ** Multi-core processors have several CPUs (referred to as “cores”) integrated onto a single integrated-circuit chip.
+
+     ​	
+
+     ```
+     , where the chip has four CPU cores, each with its
+      own L1 and L2 caches, and with each L1 cache split into two parts—one to hold
+      recently fetched instructions and onetoholddata.Thecoressharehigherlevelsof
+      cache as well as the interface to main memory.
+     ```
+
+     ![multi-cores](img/01intro/multii_processors.png)
+
+     
+
+     ​	**Hyperthreading** ： sometimes called simultaneous multi-threading, is a tech nique that allows a single CPU to execute multiple flows of control. It involves having multiple copies of some of the CPU hardware, such as program counters and register files, while having only single copies of other parts of the hardware, such as the units that perform floating-point arithmetic
+
+     
+
+     two ways of improving system-perfomance：
+
+     1. ​	it reduces the needtosimulateconcurrencywhenperformingmultipletasks.
+     2. it can run a single application program faster, but only if that program is expressed in terms of multiple threads that can effectively execute in parallel
+
+  2.  **Instruction-Level Parallelism**
+
+​					Single-Instruction, Multiple-Data (SIMD) Parallelism SIMD, 单指令，多数据操作
+​							mostly to speed up applications that process image, sound, and video data.
 
 ### 1.9.3 The Importance of Abstractions in Computer Systems
 
-
-
-
+​	![abs](img/01intro/cs_abstraction.png)
 
 
 
 ## 1.10 Summary
+
+​	计算机系统由硬件软件合作仪器运行。内部信息都是bit位，但是解释成什么，依赖于上下文。
+
+程序翻译为不同格式。一开始为ASCII文本，之后被编译然后link为exe
+
+​	解释器读取和解释二进制指令在主存因为计算机大部分时间用于data于memory 、IO devices 、 CPU registers 、store devices的copy
+
+​	操作系统内核作用like 硬件和软件的中介，三个基本抽象：
+
+1. ​	Files are abstractions for I/O devices.
+2.  Virtual memory is an abstraction for both main memory and disks
+3. Processes are abstractions for the processor, main memory, and I/O devices.
+
+networks 就是不同计算机的交互
+
+#  Representing and Manipulating Information
+
+
+
+​	
+
+```c
+#include <stdio.h>
+int main(void){
+    long long  a = 200ll * 300ll * 400ll * 500ll;
+    printf("%lld\n" , a);
+    int b = 200 * 300 * 400 * 500; //-884901888 overflow but serious
+    printf("%d\n" , b);
+    float c =  200.0f* 300.0f* 400.0f * 500.0f; //f < INFINITY  都是准确的，但是approximately
+    printf("%f\n" , c);
+    printf("%lf\n" , (3.14f + 1e20) - 1e20); //0
+    printf("%lf\n" , (3.14f + (1e20 - 1e20))); //3.14
+    return 0;
+}
+```
+
+
+
+
+
+
+
+## 2.1 Information Storage
+
+
+
+
+
