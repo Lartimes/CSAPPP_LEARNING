@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CSAPP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CSAPP">
+				<Option output="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/CSAPP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/Dev/CProjects/CSAPP/code"/>
+					<Add directory="F:\msys64\mingw64\include"/>
+					<Add directory="F:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include"/>
+					<Add directory="F:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 CSAPP"/>
+					<CompileFile command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CSAPP/fast">
+				<Option output="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/CSAPP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/Dev/CProjects/CSAPP/code"/>
+					<Add directory="F:\msys64\mingw64\include"/>
+					<Add directory="F:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include"/>
+					<Add directory="F:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 CSAPP/fast"/>
+					<CompileFile command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="F:/msys64/mingw64/bin/mingw32-make.exe -f &quot;F:/Dev/CProjects/CSAPP/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/Test01.c">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/Test02.c">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/hello.asm">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/main.c">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/test.exe">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/01intro/write.bin">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/code/02information/main.c">
+			<Option target="CSAPP"/>
+		</Unit>
+		<Unit filename="F:/Dev/CProjects/CSAPP/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
