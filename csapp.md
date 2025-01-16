@@ -13,7 +13,7 @@ Whenever you learn something new, you can try it out right away and see the resu
 	is followed in the text by one or more practice problems that you should work immediately to test your 		understanding. Solutions to the practice problems are at the end of each chapter. As you read, try to solve each problem on your own and then check the solution to make sure you are on the right track
 ```
 
-![image-20240905104456142](.\img\c%20compliation.png)
+![image-20240905104456142](.\img\01intro\c_compliation.png)
 
 # Book Overview
 
@@ -48,7 +48,7 @@ Whenever you learn something new, you can try it out right away and see the resu
 5. Optimizing Program Performance （优化程序性能）
 
    ```
-   介绍了许多提高代码性能的技术，其理念是程序员学习编写 C 代码，以便编译器可以生成高效的机器代码。我们从减少程序要完成的工作的转换开始，因此在为任何机器编写任何程序时，都应该成为标准做法。然后，我们进行转换，以提高生成的机器代码中指令级并行度的程度，从而提高它们在现代 “超标量” 处理器上的性能。为了激励这些转换，我们引入了一个关于现代乱序处理器如何工作的简单操作模型，并展示了如何通过程序的图形表示来衡量程序的关键路径方面的潜在性能。您会惊讶地发现，通过 C 代码的简单转换可以大大加快程序的速度。
+   介绍了许多提高代码性能的技术，其理念是程序员学习编写 C 代码，以便编译器可以生成高效的机器代码。我们从减少程序要完成的工作的转换开始，因此在为任何机器编写任何程序时，都应该成为标准做法。然后，我们进行转换，以提高生成的机器代码中指令级并行度的程度，从而提高它们在现代 “超标量” 处理器上的性能。为了激励这些转换，我们引入了一个关于现代乱序处理器如何工作的简单操作模型，并展示了如何通过程序的图形表示来衡量程序的关键路径方面的潜在性能。您会惊讶地发现，通过 C 代码的简单转换可以大大加快程序的速度。 	
    ```
 
    
@@ -458,6 +458,69 @@ int main(void){
 
 
 ## 2.1 Information Storage
+
+​	 A machine-level program views memory as a very large array of bytes, referred to as virtual memory
+
+​	虚拟内存虚拟出所有物理地址，结合DRAM抽象为bytes
+
+​    As indicated by its name, this virtual address space is just a conceptual image presented to the machine-level program. The actual implementation (presented in Chapter 9) uses a combination of dynamic random access memory (DRAM), f lash memory, disk storage, special hardware, and operating system software to provide the program with what appears to be a monolithic byte array.	
+
+​	编译器和运行时系统，将这些管理的内存单元转换成不同编程对象。尽管说C指针包含Type Infomation，真正生成的machine-level 程序没有这些信息。
+
+​	**It simply treats each program object as a block of bytes and the program itself as a sequence of bytes.**
+
+### 	 2.1.1 Hexadecimal Notation
+
+十六进制计数法。  入门machine-level program的第一步就是熟悉10进制，2进制，十六禁止的互相转化
+
+ 2.1.2 Data Sizes
+
+​	Every computer has a word size, indicating the nominal size of pointer data
+
+​	虚拟地址位移与word-size 有关，跟data-size无关
+
+
+
+- **Word-Size**：指处理器一次能够处理的数据位数，决定了处理器的寄存器大小和数据总线的宽度。
+- **Data-Size**：指数据项或数据结构的实际大小，通常以字节为单位。
+
+[VirtualAddress与VirtualSize与SizeOfRawData与PointerToRawData的关系 - zpchcbd - 博客园 (cnblogs.com)](https://www.cnblogs.com/zpchcbd/p/14674298.html)
+
+```
+虚拟地址位移（Virtual Address Delta）
+虚拟地址位移是一个特定的字段，通常用于描述可执行文件（如Windows PE文件）中节区（section）在内存中的偏移量。
+在Windows PE文件格式中，虚拟地址位移是一个16位的字段。
+为什么虚拟地址位移是16位？
+历史原因：
+
+Windows PE文件格式最初是为32位系统设计的，当时的内存地址空间相对较小。
+16位的虚拟地址位移足以表示大多数节区在内存中的偏移量。
+内存映射的需要：
+
+当PE文件被加载到内存中时，操作系统需要知道每个节区在内存中的实际位置。
+16位的虚拟地址位移可以表示的范围是0x0000到0xFFFF，即64KB，这对于大多数节区的内存映射是足够的。
+简化计算：
+
+16位的虚拟地址位移简化了节区内数据的相对地址计算。
+例如，如果一个数据项在节区内的偏移量是0x100，而该节区的虚拟地址位移量是0x2000，那么该数据项在内存中的实际地址就是0x2000 + 0x100 = 0x2100。
+字长与虚拟地址位移的关系
+字长决定了处理器能够处理的最大数据项大小和能够寻址的最大内存空间。
+虚拟地址位移是一个特定的字段，用于描述可执行文件中节区在内存中的偏移量，它的位数是由文件格式设计者决定的，而不是由字长直接决定的。
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

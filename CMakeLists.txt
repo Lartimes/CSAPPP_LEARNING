@@ -8,14 +8,14 @@ set(SOURCES "")
 set(HEADERS "")
 
 # 遍历所有文件，将C文件添加到源文件列表，将头文件添加到头文件列表
-foreach(FILE IN LISTS ALL_FILES)
+foreach (FILE IN LISTS ALL_FILES)
     get_filename_component(FILE_EXT "${FILE}" EXT)
-    if(FILE_EXT STREQUAL ".c")
+    if (FILE_EXT STREQUAL ".c")
         list(APPEND SOURCES "${FILE}")
-    elseif(FILE_EXT STREQUAL ".h" OR FILE_EXT STREQUAL ".hpp")
+    elseif (FILE_EXT STREQUAL ".h")
         list(APPEND HEADERS "${FILE}")
-    endif()
-endforeach()
+    endif ()
+endforeach ()
 
 
 # 添加可执行文件
@@ -23,3 +23,5 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${ALL_FILES})
 
 # 设置包含目录
 target_include_directories(${PROJECT_NAME} PRIVATE ${SOURCE_DIR})
+
+add_executable(CSAPP_CMakeLists CSAPP/CMakeLists.txt)
